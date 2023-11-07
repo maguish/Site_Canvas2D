@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://www.lirmm.fr/~mountaz/Ens/Ihm/Tp/Courbes/sol/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Traceur Light</title>
+    <link rel="stylesheet" href="./Traceur Light2_files/style.css">
+    <style type="text/css">
+        html, body {
+            font-family: Calibri, Trebuchet MS, Verdana, Geneva, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 10px;
+            text-align: center;
+        }
+
+        div {
+            margin-top: 20px;
+        }
+
+        #traceur {
+            //border: 1px solid #AAA;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="traceur" width="300" height="300">
+    </canvas>
+    <div>
+        <label for="def">Fonction f(x) =</label>
+        <input id="def" name="def" required="" type="text" placeholder="cos(x)" value="" size="25">
+    </div>
+
+<script type="text/javascript" src="./Traceur Light2_files/Animation.js"></script>
+<script type="text/javascript" src="./Traceur Light2_files/Display.js"></script>
+<script>
+    window.onload = function () {
+        let display = new Display('traceur', 'def');
+        display.draw();
+    }
+</script>
+</body></html>

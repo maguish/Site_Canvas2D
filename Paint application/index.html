@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Paint Application on Canvas</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <div class="left-block">
+      <div class="backg">
+        <!-- <div class="contrast">
+          <div>Contrast</div>
+          <div class="valeur">100%</div>
+          <input type="range" value="100" min="0" max="100">
+        </div>-->
+
+        <ul class="options">
+          <li class="opt" id="Img">
+            <b>Shapes</b>
+          </li>
+          <li class="option tool" id="rectangle">
+            <img class="imgStyle" src="img/rectangle.svg" alt="">
+            <span>Rectangle</span>
+          </li>
+          <li class="option tool" id="circle">
+            <img class="imgStyle" src="img/circle.svg" alt="">
+            <span>Circle</span>
+          </li>
+          <li class="option tool" id="triangle">
+            <img class="imgStyle" src="img/triangle.svg" alt="">
+            <span>Triangle</span>
+          </li>
+          <li class="option">
+            <input class="imgStyle" type="checkbox" id="fill-color">
+            <label for="fill-color">Fill color</label>
+          </li>
+        </ul>
+        <ul class="options">
+          <li class="opt" id="Img">
+            <b>Options</b>
+          </li>
+          <li class="option active tool" id="brush">
+            <img class="imgStyle" src="img/brush.svg" alt="">
+            <span>Brush</span>
+            <input type="color" value="#000000" id="favcolor1">
+
+          </li>
+          <li class="option tool" id="pencil">
+            <img class="imgStyle" src="img/pencil.png" alt="">
+            <span>Pencil</span>
+            <input type="color" value="#000000" id="favcolor3">
+          </li>
+          <li class="option tool" id="eraser">
+            <img class="imgStyle" src="img/eraser.svg" alt="">
+            <span>Eraser</span>
+          </li>
+
+          <form>
+            <li class="option tool" id="text">
+              <img class="imgStyle" src="img/text.png" alt="">
+              <span>Add text</span>
+            </li>
+            <input type="text" id="text-input" name="text-input" placeholder="Your text here">
+            <select id="font-family-select" name="font-family-select" required>
+              <option value="" selected disabled> Text font</option>
+              <option value="Arial">Arial</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Courier New">Courier New</option>
+            </select>
+            <input type="number" id="font-size-input" name="font-size-input" min="1" max="72" value="12"
+              placeholder="Text size" /><br>
+            <input type="color" id="color-input" name="color-input" value="#000000">
+          </form>
+        </ul>
+
+
+        <div class="buttons">
+          <button id="undo" type="button">Undo</button>
+          <button id="clear" type="button">Clear canvas</button>
+          <button id="save" type="button">Save As image</button>
+     
+
+        </div>
+
+        
+
+      </div>
+    </div>
+
+
+    <canvas class="middle-block" id="paint-canvas" width="640" height="640"></canvas>
+
+    <div class="r-block">
+      <div class="backgL">
+
+        <div class="police">
+          <b>Police</b>
+          <div id="val">5</div>
+
+          <div class="btn">
+            <div class="option" id="minus">
+              <img src="img/minus.png" alt="">
+            </div>
+            <div class="option " id="add">
+              <img src="img/add.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="backgColor">
+
+
+
+          <b>Background</b>
+          <div class="ColorChange">
+            <input type="color" value="#ffffff" id="favcolor2">
+          </div>
+        </div>
+
+        <!-- <div class="contrast">
+          <div>Contrast</div>
+          <div class="valeur">100%</div>
+          <input type="range" value="100" min="0" max="100">
+        </div>-->
+
+      </div>
+    </div>
+
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

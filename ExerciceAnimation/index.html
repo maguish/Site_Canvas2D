@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/canvas.css">
+    <script type="text/javascript" src="js/Displayer.js"></script>
+    <script type="text/javascript" src="js/Animation.js"></script>
+    <script src="js/BezierCurve.js"></script>
+
+</head>
+
+<body>
+    <div id="display"></div>
+    <div id="info" style="display:none;">
+        <p>Affichage de quelques informations issues des évènements souris.(cliquer dans la vue pour afficher)</p>
+    </div>
+    <button id="PremièreAnimation">Lancer l'animation</button>
+    <button id="SecondAnim" type="button">Deuxieme Animation</button>
+    <button id="TroisiemeAnimation" type="button">Troisième Animation</button>
+    <button id="BezierCurve" type="button">Courbe de Bezier</button>
+    <button id="animationButton">Animation</button>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            let d = new Displayer(document.getElementById("display"));
+            let info = document.getElementById("info");
+            let b = new Ball(40, 40, 40);
+            d.drawBall(b);
+            let x = d.getCanvas().width, y = d.getCanvas().height;
+            d.drawLine(0, y - 10, x, y - 10);
+
+
+
+            // Créer une instance de l'animation
+            let myAnimation = new Animation(20, 400);
+
+            // Définir la méthode nextStep pour cette instance
+            myAnimation.nextStep = function (t) {
+                // Calculer la distance parcourue depuis le début de l'animation
+                let distance = (t - myAnimation.start) / myAnimation.frameDuration;
+                // Calculer la nouvelle position de la balle en fonction de la distance parcourue
+                let newY = Math.min(y - 50, distance * 50); // 50 est la hauteur de la balle
+                // Mettre à jour la position de la balle
+                b.y = newY;
+                // Effacer le canvas
+                d.init();
+                // Redessiner la balle et la ligne horizontale
+                d.drawBall(b);
+                d.drawLine(0, y - 10, x, y - 10);//
+                requestAnimationFrame(function () {
+                    myAnimation.nextStep(performance.now());
+                });
+
+            }
+            var clicked;
+
+            function toggle_text() {
+                if (clicked === true) {
+                    info.style.display = "inline";
+                } else {
+                    info.style.display = "none";
+                }
+            }
+
+            // Récupérer le bouton dans le DOM
+            let startButton = document.getElementById("PremièreAnimation");
+
+            // Ajouter un événement au clic sur le bouton pour lancer l'animation
+            startButton.addEventListener("click", function () {
+                clicked = false
+                myAnimation.run();
+                toggle_text();
+
+            });
+
+            // deuxieme animation
+            // Récupérer le bouton dans le DOM
+            let LineButton = document.getElementById("SecondAnim");
+
+            LineButton.addEventListener("click", function () {
+                clicked = true;
+                let interact = new Interactor(d, info);
+                d.init();
+                toggle_text();
+            })
+
+            // 3 animation
+            // Récupérer le bouton dans le DOM
+            let TroisiemeAnimation = document.getElementById("TroisiemeAnimation");
+
+            TroisiemeAnimation.addEventListener("click", function () {
+                clicked = true;
+                let interact1 = new InteractorBall(b, d, info);
+                d.init();
+                toggle_text();
+            })
+
+            // Ajout d'un événement de clic sur le bouton "Créer une courbe"
+            document.getElementById("BezierCurve").addEventListener("click", function () {
+                // Création d'un nouvel objet BezierCurve
+                var curve = new BezierCurve(d);
+                curve.refresh();
+
+            });
+
+                // Ajout d'un événement de clic sur le bouton "Créer une courbe"
+                document.getElementById("animationButton").addEventListener("click", function () {
+                // Création d'un nouvel objet BezierCurve
+                var curve = new BezierCurve(d);
+                curve.startAnimation();
+
+            });
+
+
+            
+        }
+    </script>
+
+</body>
+
+</html>
