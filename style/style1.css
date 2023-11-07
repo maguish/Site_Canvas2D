@@ -1,0 +1,497 @@
+/*###################### GENERAL ######################*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,400;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  font-weight: 200;
+}
+
+/*###################### HEADER ######################*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 282px;
+  background: #263238;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+
+.logo {
+  width: 100%;
+}
+
+.logo img {
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.menu {
+  height: 100%;
+  padding-top: 30px;
+  overflow: auto;
+}
+
+.menu li {
+  list-style: none;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.menu li:hover {
+  background: #96a7a8;
+}
+
+.menu li i {
+  height: 50px;
+  min-width: 70px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.menu li.showMenu i.arrow1 {
+  transform: rotate(-180deg);
+}
+
+.menu li .subMenu {
+  width: 70%;
+  padding: 6px 6px 14px 90px;
+  margin: -10px;
+  background: #96a7a8;
+  display: none;
+}
+
+.menu li.showMenu .subMenu {
+  display: block;
+}
+
+.menu.close li .subMenu {
+  position: absolute;
+  left: 100%;
+  top: -10;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.menu li .subMenu li .linkName {
+  display: none;
+}
+
+.menu.close li .subMenu li .linkName {
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+
+.menu.close li:hover .subMenu {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu li .subMenu a {
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 0;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.menu li .subMenu a:hover {
+  opacity: 0.8;
+  color: #e7314b;
+}
+
+.menu li .subMenu li .subSubMenu {
+  padding: 0 6px 14px 20px;
+  margin: -5px;
+  display: none;
+}
+
+.menu li .subMenu li.showMenu .subSubMenu {
+  display: block;
+}
+
+.menu li .subMenu li.showMenu i.arrow2 {
+  transform: rotate(-180deg);
+}
+
+.menu li a,
+.menu li .subMenu .haschild a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu li a span {
+  font-size: 18px;
+  font-weight: 400px;
+  color: #fff;
+}
+
+.profil img {
+  height: 30px;
+  width: 30px;
+  margin: 0 14px 0 12px;
+}
+
+.profil a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400px;
+}
+
+.profil {
+  display: flex;
+  align-items: center;
+  width: 240px;
+  position: fixed;
+  bottom: 0;
+  padding: 10px 10px 40px 10px;
+  background: #273c50;
+}
+
+/*.menu li::-webkit-scrollbar {
+  display: none;
+}*/
+
+/*###################### MAIN ######################*/
+
+main {
+  background: #fff; /*#e4e9f7*/
+  position: relative;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+}
+
+/*-------------------- COURS ------------------*/
+
+section {
+  padding: 50px 50px 0px 50px;
+}
+
+.exercice ol li {
+  list-style: inherit;
+  font-weight: 600;
+}
+
+.exercice ol .tab .reponse ul li {
+  font-weight: 200;
+  list-style: square;
+  
+}
+
+.exercice .expl {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.exercice .expl div img {
+  margin-left: 15%;
+}
+
+.intro .container {
+  display: flex;
+  justify-content: space-between;
+  border-color: #c8cfd6;
+  padding: 10px 10px;
+}
+
+/*.intro .container img {
+  width: 400px;
+  height: 400px;
+}*/
+
+.intro .container .resume {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px 10px 10px;
+  background: linear-gradient(to right, #fff, #4bc2bc);
+}
+
+.intro .container .resume div h3 {
+  text-align: center;
+  font-weight: 400;
+}
+
+.intro .container .resume div p {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.exercice {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.exercice .tab {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.exercice .tab .question {
+  padding: 10px 10px 10px 10px;
+}
+
+.exercice .tab .question {
+  background: #dff5f4a1;
+  font-style: italic;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.exercice .tab .question li {
+  font-weight: 200;
+  list-style: lower-alpha;
+}
+
+.exercice .tab .reponse {
+  padding: 15px 20px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: justify;
+}
+
+
+/*.exercice .tab .reponse div img {
+  width: 250px;
+  height: 250px;
+}*/
+
+.exercice .tab .reponse div {
+  display: none;
+}
+
+.exercice .tab .reponse.show div {
+  display: block;
+}
+
+.exercice .tab .reponse button {
+  margin: auto;
+  padding: 10px 20px;
+  border: none;
+  background-color: #ffffff;
+  border: 1px solid #4bc2bc;
+  border-radius: 5px;
+  color: #4bc2bc;
+  font-size: 1rem;
+  color: #4bc2bc;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exercice .tab .reponse button:hover {
+  transform: translateY(-5px);
+  background-color: #4bc2bc;
+  color: white;
+}
+
+a.footer_link:link,
+a.footer_link:visited {
+  color: #777;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+
+a.footer_link:hover {
+  color: #ff5660;
+}
+.footer {
+  position: unset;
+  bottom: 0;
+  padding-left: 260px;
+  width: 100%;
+  background-color: #263238 !important;
+}
+
+/*######################  
+footer {
+  position: relative;
+  left: 260px;
+  width: calc(100% - 260px);
+  background: #4e4e4e;
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+  align-items: center;
+  gap: 100px;
+}
+
+footer .logofooter a img{
+  width: 120px;
+  height: 120px;
+}
+
+footer .lien {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer .lien .liste {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer .lien .liste ul {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+footer .lien .liste ul li {
+  margin: auto;
+}
+
+footer .lien .liste p {
+  color: #4bc2bc;
+}
+
+footer .lien .liste ul li a {
+  color: #fff;
+  font-size: 16px;
+}
+
+footer .lien .media {
+  display: flex;
+  justify-content: space-between
+}
+
+footer .lien .media a i {
+  color: #ff5660;
+}
+######################*/
+.exercice .tab .reponse.show div .imgs {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin-top: 15px;
+}
+
+.exercice .tab .reponse.show div .imgs .resulimg {
+  height: 50%;
+  width: 50%;
+}
+
+.img-display {
+  height: 50%;
+  width: 45%;
+}
+.img-display2 {
+  height: 50%;
+  width: 50%;
+}
+#Methode {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 1px 5px;
+  margin: 0 4px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  display: inline-block;
+  word-break: break-word;
+  font-family: Inter, sans-serif;
+  font-size: medium;
+}
+
+#aside {
+  box-sizing: content-box;
+  position: relative;
+  min-height: auto;
+}
+
+#aside::before {
+  display: block;
+  position: absolute;
+  border-radius: 0;
+  width: 30px;
+  height: 30px;
+  top: -35px;
+  right: -16px;
+  z-index: 1;
+  font-size: 34px;
+  color: #ff5660;
+}
+
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #4bc2bc;
+}
+
+a.nav-link {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: #f2f4f8;
+  text-decoration: none;
+}
+
+a.inscri_link:link,
+a.inscri_link:visited {
+  color: #ffffff;
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  text-decoration: none;
+ 
+}
+
+a.inscri_link:hover {
+  color: #4bc2bc;
+}
+
+#active1 {
+  color: #4bc2bc !important;
+}
+
+#active1 > a {
+  color: #4bc2bc !important;
+}
+
+#btn4 {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff5660;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 7px;
+}
